@@ -5,18 +5,9 @@ interface HeroProps {
   onSearchChange: (value: string) => void
   total: number
   visible: number
-  popularSearches: string[]
-  onPopular: (term: string) => void
 }
 
-export function Hero({
-  search,
-  onSearchChange,
-  total,
-  visible,
-  popularSearches,
-  onPopular,
-}: HeroProps) {
+export function Hero({ search, onSearchChange, total, visible }: HeroProps) {
   return (
     <section className="hero" aria-label="Buscador de departamentos">
       <div className="hero__stars" aria-hidden="true">
@@ -43,19 +34,6 @@ export function Hero({
           total={total}
           visible={visible}
         />
-      </div>
-
-      <div className="chips" aria-label="Búsquedas populares">
-        {popularSearches.map((term) => (
-          <button
-            key={term}
-            type="button"
-            className={`chip ${search === term ? 'chip--active' : ''}`}
-            onClick={() => onPopular(term)}
-          >
-            {term}
-          </button>
-        ))}
       </div>
     </section>
   )

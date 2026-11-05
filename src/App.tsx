@@ -9,15 +9,6 @@ import './App.css'
 
 type Status = 'loading' | 'ready' | 'error'
 
-const POPULAR_SEARCHES = [
-  'Antioquia',
-  'Bogotá',
-  'Valle del Cauca',
-  'Santander',
-  'Chocó',
-  'La Guajira',
-]
-
 export default function App() {
   const [departments, setDepartments] = useState<Department[]>([])
   const [status, setStatus] = useState<Status>('loading')
@@ -114,9 +105,7 @@ export default function App() {
   return (
     <div className="app">
       <Sidebar
-        departments={departments}
-        activeName={search || null}
-        onSelect={setSearch}
+        departmentCount={departments.length}
         totalPopulation={totals.population}
         totalMunicipalities={totals.municipalities}
       />
@@ -127,8 +116,6 @@ export default function App() {
           onSearchChange={setSearch}
           total={departments.length}
           visible={filtered.length}
-          popularSearches={POPULAR_SEARCHES}
-          onPopular={setSearch}
         />
 
         {status === 'loading' && (

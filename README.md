@@ -25,10 +25,6 @@ npm -v
 
 ### 1. Clonar / ubicarse en la carpeta
 
-```powershell
-cd C:\Users\ALEX\Documents\react-vite-apicolombia
-```
-
 Si estás clonando desde un repositorio:
 
 ```bash
@@ -50,7 +46,7 @@ npm run dev
 
 Abre en tu navegador **http://localhost:5173**
 
-> El script `"dev": "vite"` ya está definido en `package.json` (líneas 6-12).
+> El script `"dev": "vite"` ya está definido en `package.json` 
 
 ### 4. Comandos adicionales disponibles
 
@@ -61,15 +57,15 @@ Abre en tu navegador **http://localhost:5173**
 | `npm run preview` | Previsualiza la build de producción en local |
 | `npm run build` | Compila para producción (TypeScript + Vite → carpeta `dist/`) |
 
-## Decisiones técnicas tomadas para la interacción de la vista única
 
-### 1. Estructura de la vista única
+### Estructura de la vista única
 
-Se implementó una sola página sin router, dividida en tres zonas:
+Se implementó una sola página, dividida en tres zonas:
 
-- **Sidebar** (`src/components/Sidebar.tsx`): navegación lateral con acceso rápido a los primeros 8 departamentos, guía de uso y estadísticas globales (total de departamentos, municipios y población). En móvil se convierte en bloque superior.
-- **Hero con SearchBar** (`src/components/Hero.tsx` + `src/components/SearchBar.tsx`): contiene el buscador principal, un contador de resultados visibles y etiquetas de búsqueda popular (chips) que actúan como atajos.
-- **Grid de DepartmentCard** (`src/components/DepartmentCard.tsx`): tarjetas expandibles en un grid responsive. Cada card muestra en estado cerrado el capital, población, superficie, municipios e indicativo; al expandir se despliega el detalle completo.
+- **Sidebar** navegación lateral con acceso rápido a los primeros 8 departamentos, guía de uso y estadísticas globales (total de departamentos, municipios y población). En móvil se convierte en bloque superior.
+- **Hero con SearchBar** contiene el buscador principal, un contador de resultados visibles 
+
+- **Grid de DepartmentCard**  tarjetas expandibles en un grid responsive. Cada card muestra en estado cerrado el capital, población, superficie, municipios e indicativo; al expandir se despliega el detalle completo.
 
 ### 2. Uso adecuado de Hooks (`useState`, `useEffect`, `useMemo`, `useRef`)
 

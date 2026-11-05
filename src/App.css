@@ -229,29 +229,6 @@
   color: var(--red);
 }
 
-.chip {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--text-h);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, transform 0.1s;
-}
-
-.chip:hover {
-  border-color: var(--yellow-dark);
-  transform: translateY(-1px);
-}
-
-.chip--active {
-  background: var(--yellow-soft);
-  border-color: var(--yellow-dark);
-  color: #92600a;
-  font-weight: 700;
-}
-
 /* ===== Buscador ===== */
 .search-bar {
   display: flex;
